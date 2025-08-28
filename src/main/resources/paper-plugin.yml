@@ -1,0 +1,14 @@
+name: GPFrameworkTest
+version: '${version}'
+author: GrassProject
+
+api-version: "1.21"
+
+main: io.github.grassproject.framework.test.GPFrameworkTestPlugin
+bootstrapper: io.github.grassproject.framework.test.GPFrameworkTestBootstrap
+loader: io.github.grassproject.framework.test.GPFrameworkTestLoader
+
+dependencies:
+  server:
+    GPFramework:
+      required: true
