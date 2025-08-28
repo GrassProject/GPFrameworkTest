@@ -20,7 +20,11 @@ repositories {
 
 dependencies {
     compileOnly("io.papermc.paper:paper-api:1.21.8-R0.1-SNAPSHOT")
-    compileOnly("com.github.GrassProject:GPFramework:0.1-RC1")
+    compileOnly("com.github.GrassProject:GPFramework:0.2-RC1")
+
+    implementation("org.jetbrains.exposed:exposed-core:1.0.0-beta-5")
+    implementation("org.jetbrains.exposed:exposed-jdbc:1.0.0-beta-5")
+    implementation("org.jetbrains.exposed:exposed-dao:1.0.0-beta-5") // Optional
 }
 
 kotlin {
@@ -33,7 +37,7 @@ java {
 }
 
 tasks.register<ShadowJar>("shadowJarPlugin") {
-    archiveFileName.set("GPFramework-${project.version}-shaded.jar")
+    archiveFileName.set("GPFrameworkTest-${project.version}-shaded.jar")
 
     from(sourceSets.main.get().output)
     configurations = listOf(project.configurations.runtimeClasspath.get())
